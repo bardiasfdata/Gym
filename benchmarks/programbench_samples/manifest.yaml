@@ -1,0 +1,31 @@
+name: programbench_samples
+version: 0.1.0
+experimental: true
+kind: benchmark
+integration_profile: external-agent-loop
+domain: coding
+description: ProgramBench sample tasks, each a pinned Harbor package that asks for a
+  working program from its documentation, run unchanged through the Harbor bridge and
+  scored by the package's own verifier.
+modality: text
+licensing: unknown
+authors:
+- SanFranciscoData
+reward:
+  range:
+  - 0.0
+  - 1.0
+  higher_is_better: true
+determinism: unknown
+agent_server: harbor_agent
+datasets:
+- name: programbench_samples
+  type: benchmark
+  jsonl_fpath: benchmarks/programbench_samples/data/benchmark.jsonl
+  prepare_script: benchmarks/programbench_samples/prepare.py
+  num_repeats: 1
+model_server: policy_model
+canonical_split: benchmark
+prompt_source: agent
+lifecycle: active
+resources_server: null

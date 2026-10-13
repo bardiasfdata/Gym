@@ -1,0 +1,49 @@
+{
+  "dataset": "SanFranciscoData/NVIDIA-Training-Samples",
+  "tasks": [
+    {
+      "name": "chipsalliance--verible-verilog-format.b975d9d",
+      "ref": "sha256:dcb49ac5a37314934cd19681e977680653e32da68c2ba75c90b318ec3feff734"
+    },
+    {
+      "name": "google--glslc.27d8e0b",
+      "ref": "sha256:7d19927dce4be7d5a2b5e1fa4ae095fc89ea8f9c549b1c204908f5e842eb4a5c"
+    },
+    {
+      "name": "helm--helm.fa11636",
+      "ref": "sha256:5446d6d866f3f1022cfbb0da7046a20043dfe388de8543d18a42588c99ddfdd8"
+    },
+    {
+      "name": "ichiban--1pl.6375564",
+      "ref": "sha256:23212c7382327338ad2abe4183f7611e517be8951b9eb74919f2f57278be1771"
+    },
+    {
+      "name": "kcl-lang--kcl.07b88a3",
+      "ref": "sha256:3d61afefe8fed4d181903549fb33dc993fb37bed310b7f5bbc46e0ac548c761c"
+    },
+    {
+      "name": "lightgbm-org--lightgbm.d596b96",
+      "ref": "sha256:0d73ee600e0cc6d986ee772318ebba683149faa309bd386bb0ccfe53ca7fe9a9"
+    },
+    {
+      "name": "luau-lang--luau.62dbc0b",
+      "ref": "sha256:de02d3634b09670b77376a2c35fbc6c7d488fb0e50c85843e41a88698d12ed71"
+    },
+    {
+      "name": "oxigraph--oxigraph.7ce152a",
+      "ref": "sha256:af4dd8e2a3d84be11c04d76ef8ec770f8e8b1877135d0030c16fd6753817f358"
+    },
+    {
+      "name": "pacak--cargo-asm.338d06c",
+      "ref": "sha256:a9080d02ce23b3f177f87978d57eba8a313a4331c0506cd3e93891dce40e2c29"
+    },
+    {
+      "name": "soedinglab--mmseqs.eec9c35",
+      "ref": "sha256:1a2fdba2b52b3dad7e98393571c4ea4049b469155eca7d9f9009dfafed59dcec"
+    },
+    {
+      "name": "wasmi-labs--wasmi_cli.2970aa8",
+      "ref": "sha256:6e974456b7e570d46648e1e3febb0c63e114231b1326650eca53e21370894eb0"
+    }
+  ]
+}

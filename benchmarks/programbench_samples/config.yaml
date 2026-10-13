@@ -1,0 +1,60 @@
+# SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+
+programbench_samples_harbor_agent:
+  responses_api_agents:
+    harbor_agent:
+      entrypoint: app.py
+      domain: coding
+      description: ProgramBench task packages run unchanged through the Harbor bridge on local Docker.
+      concurrency: ${oc.select:programbench_concurrency,11}
+
+      harbor_datasets:
+        programbench:
+          local_dataset_path: ${oc.select:programbench_tasks_dir,benchmarks/programbench_samples/tasks}
+
+      harbor_agent_name: null
+      harbor_agent_import_path: "responses_api_agents.harbor_agent.custom_agents.terminus_2_nemo_gym:Terminus2NemoGym"
+      harbor_agent_kwargs:
+        max_turns: ${oc.select:programbench_max_turns,60}
+        interleaved_thinking: true
+        enable_summarize: false
+        collect_rollout_details: true
+        trajectory_config:
+          raw_content: true
+        model_info:
+          max_input_tokens: 131072
+          max_output_tokens: 32768
+          input_cost_per_token: 0.0
+          output_cost_per_token: 0.0
+
+      harbor_environment_type: null
+      harbor_environment_import_path: "benchmarks.programbench_samples.no_network_env:NoNetworkDockerEnvironment"
+      harbor_environment_kwargs: {}
+      harbor_no_delete: false
+
+      model_server:
+        type: responses_api_models
+        name: policy_model
+
+      harbor_agent_override_timeout: null
+      harbor_agent_max_timeout: null
+      harbor_verifier_override_timeout: null
+      harbor_verifier_max_timeout: null
+      harbor_timeout_multiplier: null
+      harbor_jobs_dir: ${oc.select:programbench_jobs_dir,results/programbench_samples/jobs}
+
+      datasets:
+        - name: programbench_samples
+          type: benchmark
+          jsonl_fpath: benchmarks/programbench_samples/data/benchmark.jsonl
+          prepare_script: benchmarks/programbench_samples/prepare.py
+          num_repeats: 1
+
+programbench_samples_environment_server:
+  environment_servers:
+    legacy_agent:
+      entrypoint: app.py
+      agent_server:
+        type: responses_api_agents
+        name: programbench_samples_harbor_agent

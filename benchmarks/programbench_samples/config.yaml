@@ -8,6 +8,7 @@ programbench_samples_harbor_agent:
       domain: coding
       description: ProgramBench task packages run unchanged through the Harbor bridge on local Docker.
       concurrency: ${oc.select:programbench_concurrency,11}
+      harbor_ray_task_num_cpus: 0.5
 
       harbor_datasets:
         programbench:
